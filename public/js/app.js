@@ -13689,16 +13689,13 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(11);
-module.exports = __webpack_require__(37);
+module.exports = __webpack_require__(36);
 
 
 /***/ }),
 /* 11 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_prueba_js__ = __webpack_require__(36);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -13722,24 +13719,13 @@ __webpack_require__(12);
 //     el: '#app'
 // });
 
+console.log('Mensaje desde app.js');
+
 // CUSTOM
 
+// import { mensaje_prueba } from './template/prueba.js'
 
-
-console.log('Mensaje desde app.js');
-console.log(__WEBPACK_IMPORTED_MODULE_0__components_prueba_js__["a" /* mensaje_prueba */]);
-
-// $('#boton').click(function (event) {
-// 	event.preventDefault();
-// 	console.log('Mensaje desde la funcion');
-// 	var data= $('#logoutForm').serialize();
-// 	$.ajax({
-// 		url: 'http://localhost:8000/products/'+$('#elinput').val()+'',
-// 		type: 'post',
-// 		dataType: 'json',
-// 		data:{data: data}
-// 	});
-// });
+// console.log(mensaje_prueba);
 
 /***/ }),
 /* 12 */
@@ -35973,19 +35959,6 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 36 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return mensaje_prueba; });
-var mensaje_prueba = 'Mensaje desde prueba.js';
-
-// export const funcion_prueba = function() {
-
-//         return 'Mensaje desde prueba.js';
-// }
-
-/***/ }),
-/* 37 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

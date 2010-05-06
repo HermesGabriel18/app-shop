@@ -21,22 +21,11 @@ require('./bootstrap');
 //     el: '#app'
 // });
 
+console.log('Mensaje desde app.js');
+
 // CUSTOM
 
-import { mensaje_prueba } from './components/prueba.js'
+// import { mensaje_prueba } from './template/prueba.js'
 
-console.log('Mensaje desde app.js');
-console.log(mensaje_prueba);
-
-// $('#boton').click(function (event) {
-// 	event.preventDefault();
-// 	console.log('Mensaje desde la funcion');
-// 	var data= $('#logoutForm').serialize();
-// 	$.ajax({
-// 		url: 'http://localhost:8000/products/'+$('#elinput').val()+'',
-// 		type: 'post',
-// 		dataType: 'json',
-// 		data:{data: data}
-// 	});
-// });
+// console.log(mensaje_prueba);
 
