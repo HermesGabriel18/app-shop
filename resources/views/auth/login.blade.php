@@ -12,17 +12,17 @@
                 @csrf
               <div class="card-header card-header-primary text-center">
                 <h4 class="card-title">Inicio de sesión</h4>
-                <div class="social-line">
-                  <a href="#pablo" class="btn btn-just-icon btn-link">
+                {{-- <div class="social-line">
+                  <a href="#" class="btn btn-just-icon btn-link">
                     <i class="fa fa-facebook-square"></i>
                   </a>
-                  <a href="#pablo" class="btn btn-just-icon btn-link">
+                  <a href="#" class="btn btn-just-icon btn-link">
                     <i class="fa fa-twitter"></i>
                   </a>
-                  <a href="#pablo" class="btn btn-just-icon btn-link">
+                  <a href="#" class="btn btn-just-icon btn-link">
                     <i class="fa fa-google-plus"></i>
                   </a>
-                </div>
+                </div> --}}
               </div>
               <p class="description text-center">Ingrese sus datos</p>
               <div class="card-body">
@@ -32,7 +32,7 @@
                       <i class="material-icons">mail</i>
                     </span>
                   </div>
-                  <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email..." required autofocus>
+                  <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Correo electrónico..." required autofocus>
                     @if ($errors->has('email'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('email') }}</strong>
@@ -45,7 +45,7 @@
                       <i class="material-icons">lock_outline</i>
                     </span>
                   </div>
-                  <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password..." required>
+                  <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Contraseña..." required>
                     @if ($errors->has('password'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('password') }}</strong>
