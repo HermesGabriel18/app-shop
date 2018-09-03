@@ -17,7 +17,7 @@
   <link href=" {{ asset('css/material-kit.css?v=2.0.4') }} " rel="stylesheet" />
 </head>
 
-<body class="sidebar-collapse">
+<body class="sidebar-collapse @yield('body-class')">
     <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
         <div class="container">
             <div class="navbar-translate">
@@ -71,45 +71,10 @@
         </div>
     </nav>
 
-    <div class="page-header header-filter">
+    <div class="wrapper">
+        @yield('content')
     </div>
 
-
-    <footer class="footer">
-        <div class="container">
-            <nav class="float-left">
-                <ul>
-                    <li>
-                        <a href="https://www.creative-tim.com">
-                            Creative Tim
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://creative-tim.com/presentation">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://blog.creative-tim.com">
-                            Blog
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.creative-tim.com/license">
-                            Licenses
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="copyright float-right">
-                &copy;
-                <script>
-                    document.write(new Date().getFullYear())
-                </script>, made with <i class="material-icons">favorite</i> by
-                <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-            </div>
-        </div>
-    </footer>
 
     <!--   Core JS Files   -->
   <script src="{{ asset('js/core/jquery.min.js') }} " type="text/javascript"></script>
