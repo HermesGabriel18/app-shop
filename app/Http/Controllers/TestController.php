@@ -11,6 +11,6 @@ class TestController extends Controller
     {
     	//$products = Product::all();
     	$products = Product::paginate(10);
-    	return view('welcome')->with(compact('products'));
+    	return view('welcome', compact('products'));
     }
 }

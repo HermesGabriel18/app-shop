@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Product;
 
@@ -15,7 +17,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::paginate(10);
-        return view('admin.products.index')->with(compact('products'));
+        return view('admin.products.index', compact('products'));
     }
 
     /**
@@ -36,7 +38,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('products')->insert([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'long_description' => $request->input('long_description'),
+            'price' => $request->input('price'),
+
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        return redirect()->route('products.index');
     }
 
     /**
@@ -58,7 +70,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
@@ -70,7 +83,16 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('products')->where('id', $id)->update([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'long_description' => $request->input('long_description'),
+            'price' => $request->input('price'),
+
+            'updated_at' => Carbon::now()
+        ]);
+
+        return redirect()->route('products.index');
     }
 
     /**
@@ -81,6 +103,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
+
+        return redirect()->route('products.index');
     }
 }

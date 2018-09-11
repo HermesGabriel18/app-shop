@@ -88,8 +88,10 @@
             </div>
             @endforeach
           </div>
+          <div class="d-flex justify-content-center">
+            {{ $products->links() }}
+          </div>
         </div>
-        {{ $products->links() }}
       </div>
       <div class="section section-contacts">
         <div class="row">
