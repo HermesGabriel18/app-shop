@@ -35,18 +35,28 @@
                         <td class="col-2">{{ $product->category ? $product->category->name : 'General' }}</td>
                         <td class="col-1 text-right">&euro; {{ $product->price }}</td>
                         <td class="col-2 td-actions text-right">
-                            <form action="{{ route('products.destroy', $product->id) }}" method="post">
+                            {{-- <form action="{{ route('products.destroy', $product->id) }}" method="post">
                               @csrf
-                              @method('delete')
-                              <a href="{{ route('products.show', $product->id) }}" rel="tooltip" title="Ver producto" class="btn btn-info btn-fab btn-fab-mini btn-round">
+                              @method('delete') --}}
+                              {{-- <a href="{{ route('products.show', $product->id) }}" rel="tooltip" title="Ver producto" class="btn btn-info btn-fab btn-fab-mini btn-round">
                                 <i class="fa fa-info"></i>
-                              </a>
+                              </a> --}}
                               <a href="{{ route('products.edit', $product->id) }}" rel="tooltip" title="Editar producto" class="btn btn-success btn-fab btn-fab-mini btn-round">
                                   <i class="fa fa-edit"></i>
                               </a>
-                              <button type="submit" rel="tooltip" title="Eliminar" class="btn btn-danger btn-fab btn-fab-mini btn-round">
+                              <a href="{{ route('productImages.index', $product->id) }}" rel="tooltip" title="Imágenes del producto" class="btn btn-warning btn-fab btn-fab-mini btn-round">
+                                  <i class="fa fa-image"></i>
+                              </a>
+                              {{-- <button type="submit" rel="tooltip" title="Eliminar" class="btn btn-danger btn-fab btn-fab-mini btn-round">
                                 <i class="fa fa-times"></i>
                               </button>
+                            </form> --}}
+                              <button href="#" rel="tooltip" title="Eliminar" id="boton" class="btn btn-danger btn-fab btn-fab-mini btn-round" {{-- onclick=" console.log({{$product->id}}); --}} onclick="prueba(); ">
+                                <i class="fa fa-times"></i>
+                              </button>
+                            <form action="#" method="post" id="logoutForm" style="display: none;">
+                              @csrf
+                              @method('delete')
                             </form>
                             
                         </td>
@@ -63,39 +73,5 @@
       </div>
     </div>
   </div>
-  <footer class="footer footer-default">
-    <div class="container">
-      <nav class="float-left">
-        <ul>
-          <li>
-            <a href="https://www.creative-tim.com">
-              Creative Tim
-            </a>
-          </li>
-          <li>
-            <a href="https://creative-tim.com/presentation">
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="http://blog.creative-tim.com">
-              Blog
-            </a>
-          </li>
-          <li>
-            <a href="https://www.creative-tim.com/license">
-              Licenses
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div class="copyright float-right">
-        &copy;
-        <script>
-          document.write(new Date().getFullYear())
-        </script>, made with <i class="material-icons">favorite</i> by
-        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-      </div>
-    </div>
-  </footer>
+  @include('includes.footer')
 @endsection

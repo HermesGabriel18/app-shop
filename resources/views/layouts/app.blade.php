@@ -42,12 +42,24 @@
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Registro') }}</a>
                         </li>
                     @else
+                        {{-- @if(auth()->user()->admin)
+                          <li class="nav-item">
+                            <a class="nav-link" href="{{ route('products.index') }}">Gestionar productos</a>
+                          </li>
+                        @endif --}}
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                              <a class="dropdown-item" href="{{ route('home') }}">Dashboard</a>
+
+                              @if(auth()->user()->admin)
+                                <a class="dropdown-item" href="{{ route('products.index') }}">Gestionar productos</a>
+                              @endif
+                              
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
@@ -98,6 +110,8 @@
   <script src="{{ asset('js/plugins/jquery.sharrre.js') }} " type="text/javascript"></script>
   <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
   <script src="{{ asset('js/material-kit.js?v=2.0.4') }} " type="text/javascript"></script>
+  <!-- Custom script -->
+  <script src="{{ asset('js/script.js') }} " type="text/javascript"></script>
 </body>
 
 </html>
