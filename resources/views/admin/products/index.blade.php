@@ -35,9 +35,9 @@
                         <td class="col-2">{{ $product->category ? $product->category->name : 'General' }}</td>
                         <td class="col-1 text-right">&euro; {{ $product->price }}</td>
                         <td class="col-2 td-actions text-right">
-                            {{-- <form action="{{ route('products.destroy', $product->id) }}" method="post">
+                            <form action="{{ route('products.destroy', $product->id) }}" method="post">
                               @csrf
-                              @method('delete') --}}
+                              @method('delete')
                               {{-- <a href="{{ route('products.show', $product->id) }}" rel="tooltip" title="Ver producto" class="btn btn-info btn-fab btn-fab-mini btn-round">
                                 <i class="fa fa-info"></i>
                               </a> --}}
@@ -47,18 +47,10 @@
                               <a href="{{ route('productImages.index', $product->id) }}" rel="tooltip" title="Imágenes del producto" class="btn btn-warning btn-fab btn-fab-mini btn-round">
                                   <i class="fa fa-image"></i>
                               </a>
-                              {{-- <button type="submit" rel="tooltip" title="Eliminar" class="btn btn-danger btn-fab btn-fab-mini btn-round">
+                              <button type="submit" rel="tooltip" title="Eliminar" class="btn btn-danger btn-fab btn-fab-mini btn-round">
                                 <i class="fa fa-times"></i>
                               </button>
-                            </form> --}}
-                              <button href="#" rel="tooltip" title="Eliminar" id="boton" class="btn btn-danger btn-fab btn-fab-mini btn-round" {{-- onclick=" console.log({{$product->id}}); --}} onclick="prueba(); ">
-                                <i class="fa fa-times"></i>
-                              </button>
-                            <form action="#" method="post" id="logoutForm" style="display: none;">
-                              @csrf
-                              @method('delete')
                             </form>
-                            
                         </td>
                     </tr>
                   @endforeach

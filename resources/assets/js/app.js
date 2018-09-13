@@ -7,7 +7,7 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+// window.Vue = require('vue');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,8 +15,28 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-const app = new Vue({
-    el: '#app'
-});
+// const app = new Vue({
+//     el: '#app'
+// });
+
+// CUSTOM
+
+import { mensaje_prueba } from './components/prueba.js'
+
+console.log('Mensaje desde app.js');
+console.log(mensaje_prueba);
+
+// $('#boton').click(function (event) {
+// 	event.preventDefault();
+// 	console.log('Mensaje desde la funcion');
+// 	var data= $('#logoutForm').serialize();
+// 	$.ajax({
+// 		url: 'http://localhost:8000/products/'+$('#elinput').val()+'',
+// 		type: 'post',
+// 		dataType: 'json',
+// 		data:{data: data}
+// 	});
+// });
+

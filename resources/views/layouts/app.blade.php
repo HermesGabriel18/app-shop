@@ -6,6 +6,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href=" {{ asset('img/apple-icon.png') }} ">
   <link rel="icon" type="image/png" href=" {{ asset('img/favicon.png') }} ">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="csrf-token" content="{{csrf_token()}}">
   <title>
     @yield('title', 'App Shop')
   </title>
@@ -14,6 +15,7 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
+  <link href=" {{ asset('css/app.css') }} " rel="stylesheet" />
   <link href=" {{ asset('css/material-kit.css?v=2.0.4') }} " rel="stylesheet" />
 </head>
 
@@ -95,10 +97,10 @@
     <div class="wrapper">
         @yield('content')
     </div>
-
-
+  
+  
     <!--   Core JS Files   -->
-  <script src="{{ asset('js/core/jquery.min.js') }} " type="text/javascript"></script>
+  <script src="{{ asset('js/app.js') }} " type="text/javascript"></script>
   <script src="{{ asset('js/core/popper.min.js') }} " type="text/javascript"></script>
   <script src="{{ asset('js/core/bootstrap-material-design.min.js') }} " type="text/javascript"></script>
   <script src="{{ asset('js/plugins/moment.min.js') }} "></script>
@@ -110,8 +112,6 @@
   <script src="{{ asset('js/plugins/jquery.sharrre.js') }} " type="text/javascript"></script>
   <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
   <script src="{{ asset('js/material-kit.js?v=2.0.4') }} " type="text/javascript"></script>
-  <!-- Custom script -->
-  <script src="{{ asset('js/script.js') }} " type="text/javascript"></script>
 </body>
 
 </html>
